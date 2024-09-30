@@ -1,0 +1,42 @@
+Entity Relationship Diagram (ERD)
+Untuk mengelola data penghuni, rumah, pembayaran, dan pengeluaran, berikut adalah gambaran ERD:
+Tabel:
+1.	Penghuni
+    ID
+    Nama Lengkap
+    Foto KTP (path ke file)
+    Status (Tetap/Kontrak)
+    Nomor Telepon
+    Status Menikah (Boolean)
+    Created_at, Updated_at
+2.	Rumah
+    ID
+    Keluarga
+    Foto_Rumah
+    Alamat
+    Status (Dihuni/Tidak dihuni)
+    Penghuni_ID (Foreign Key ke tabel Penghuni)
+    Created_at, Updated_at
+3.	Pembayaran
+    ID
+    Penghuni_ID (Foreign Key ke tabel Penghuni)
+    Rumah_ID (Foreign Key ke tabel Rumah)
+    Tanggal Pembayaran
+    Jenis Iuran (Satpam/Kebersihan)
+    Jumlah
+    Status (Lunas/Belum)
+    Created_at, Updated_at
+4.	Pengeluaran
+    ID
+    Deskripsi
+    Jumlah
+    Tanggal Pengeluaran
+    Jenis Pengeluaran (Rutin/Non-Rutin)
+    Created_at, Updated_at
+5.	Riwayat Penghuni Rumah
+    ID
+    Rumah_ID (Foreign Key ke tabel Rumah)
+    Penghuni_ID (Foreign Key ke tabel Penghuni)
+    Tanggal Masuk
+    Tanggal Keluar
+    Created_at, Updated_at
